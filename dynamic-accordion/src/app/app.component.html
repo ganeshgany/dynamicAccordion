@@ -1,0 +1,13 @@
+<div class="container">
+  <!-- <mat-slider min="1" max="100" step="1" value="1">slider</mat-slider> -->
+  <!-- Input <input type="text" class="form-control" [(ngModel)]="task.taskList"> <br> -->
+  <textarea name="task" id="task" cols="30" rows="8" class="form-control" [(ngModel)]="task.taskList"
+    placeholder="please enter your accordion data in array of objects format"></textarea>
+  <input type="file" #taskFile class="form-control" [(ngModel)]="task.file" (change)="onFileSelect($event)">
+
+
+  <button class="btn btn-primary" type="button" (click)="transformData()">Data Transform</button>
+  <button class="btn btn-primary" type="button" (click)="send()">File Ouput</button>
+  <button class="btn btn-primary" type="button" (click)="sampleTest()">Sample Accordion</button>
+  <app-task-list *ngIf="taskListShow" [taskList]="tasks"></app-task-list>
+</div>
